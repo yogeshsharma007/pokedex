@@ -1,0 +1,32 @@
+<div class="container-fluid mx-auto screen">
+    <div class="row mb-2 header">
+        <div class="col-9 header-content">
+            <span>{{pokemon.name}}</span>
+        </div>
+        <div class="col py-auto my-auto cancel" style="text-align: right;">
+            <span title="Close window" class="close" (click)="onCancel()"><i class="far fa-times-circle"></i></span>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12" style="display: inline-flex;">
+            <img  [src]="pokemon.image" alt="" srcset="">
+            <p>{{pokemon.desc}}</p>
+        </div>
+    </div>
+
+    <div class="row stats">
+        <div class="col-12">
+            <span>Stats</span>
+        </div>
+        <hr>
+
+        <div class="col-12" *ngFor="let stat of pokemon.stats; let i = index">
+            <p>
+                <span style="font-weight: 500;">{{i + 1}}. {{stat.stat.name}}</span><br>
+                <span>Base Stat : {{stat.base_stat}}, </span>
+                <span> Effort : {{stat.effort}}</span>
+            </p>
+        </div>
+    </div>
+</div>

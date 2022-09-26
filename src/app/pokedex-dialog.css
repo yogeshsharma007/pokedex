@@ -1,0 +1,22 @@
+.screen {
+    width: 100%;
+    height: auto;
+    overflow-y: auto;
+    z-index: 99999;
+}
+.header-content span {
+    font-size: 22px;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+}
+.cancel>span {
+    cursor: pointer;
+}
+.stats {
+    font-size: 13px;
+}
+.stats>div>span {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+}

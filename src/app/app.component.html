@@ -1,0 +1,84 @@
+<div class="container-fluid">
+  <div class="header">
+    <div class="container mx-auto">
+      <div class="row">
+        <div class="col p-sm-3 p-2 game-name">
+          <p>Pokedex</p>
+        </div>
+
+        <div class="col searchBox my-auto">
+          <input (ngModelChange)="onSearch($event)" [(ngModel)]="searchString" type="search" value=""
+            placeholder="Search pokemon">
+        </div>
+      </div>
+    </div>
+  </div><br><br>
+
+  <div class="row body mt-sm-4 mt-3 mb-3 mx-1" *ngIf="dataload; else loading">
+    <div class="col">
+      <div class="container mx-auto" *ngIf="result.length > 0; else noData">
+        <div class="row card mb-1" *ngFor="let pokemon of result">
+
+          <div class="col-12 p-2 card-header">
+            <span>{{pokemon.id}}. {{pokemon.name | uppercase}}</span>
+          </div>
+
+          <div class="col-12 card-body">
+            <div class="row">
+              <div class="col-sm-4 col-5">
+                <img [src]="pokemon.image" alt="" title="Click to view stats" style="cursor: pointer;" (click)="onImage(pokemon)">
+              </div>
+              <div class="col-sm-5 col-7 my-auto">
+                <span>{{pokemon.desc}}</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-12 card-footer">
+            <div class="row p-2">
+              <div class="col-sm-4 col-12 mx-auto">
+                <p class="type">
+                  <span style="font-weight: 500;">Type : </span>
+                  <span style="color: cornflowerblue;"> {{pokemon.type}}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #noData>
+        <div class="container mx-auto" style="text-align: center;">
+          <div class="row mb-1">
+
+            <div class="col-12 p-2">
+              <span>No record found</span>
+            </div>
+
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <div class="row body mt-sm-4 mt-3 mb-3 mx-1">
+      <div class="col" style="text-align: center;">
+        <img class="loadingImage" src="../assets/loading.gif" alt="" srcset="">
+      </div>
+    </div>
+  </ng-template>
+
+  <br><br>
+
+  <div class="row footer" id="paginator">
+    <mat-paginator #paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="[10, 20, 50, 100]"
+      [pageSizeOptions]="pageSizeOptions" (page)="onPage($event)">
+    </mat-paginator>
+  </div>
+
+
+</div>
+

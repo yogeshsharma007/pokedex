@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background-color: rgb(247, 247, 247);
+    width: 100%;
+    box-shadow: 1px 1px 5px 1px;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+}
+.game-name {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.searchBox {
+    text-align: right;
+}
+input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: rgb(247, 247, 247);
+    border-bottom: 2px solid rgb(126, 126, 126);
+    border-radius: 3px;
+    width: 300px;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+.card-header>span {
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+img {
+    margin-left: 20px;
+}
+
+.loadingImage {
+    width: auto;
+    height: auto;
+}
+
+.card-footer {
+    font-size: 14px;
+    
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+}
+
+@media screen and (max-width: 768px) {
+    .loadingImage {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    input {
+        width: 230px;
+
+    }
+}
